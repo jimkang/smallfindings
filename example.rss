@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:anchor="https://anchor.fm/xmlns">
+	<channel>
+		<title><![CDATA[Small Findings]]></title>
+		<description><![CDATA[A roundup of small bits of information that I've collected, processed, and put away each week. Findings topics are often mundane (like pizza dough) or weird (like shark attacks in 1916).]]></description>
+		<link>https://jimkang.com</link>
+		<image>
+			<url>https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_nologo/4176626/4176626-1585370926102-c982ab4a9049f.jpg</url>
+			<title>Small Findings</title>
+			<link>https://jimkang.com</link>
+		</image>
+		<generator>Anchor Podcasts</generator>
+		<lastBuildDate>Thu, 02 Apr 2020 01:29:18 GMT</lastBuildDate>
+		<atom:link href="https://anchor.fm/s/197d9d08/podcast/rss" rel="self" type="application/rss+xml"/>
+		<author><![CDATA[Jim]]></author>
+		<copyright><![CDATA[Jim]]></copyright>
+		<language><![CDATA[en]]></language>
+		<atom:link rel="hub" href="https://pubsubhubbub.appspot.com/"/>
+		<itunes:author>Jim</itunes:author>
+		<itunes:summary>A roundup of small bits of information that I&apos;ve collected, processed, and put away each week. Findings topics are often mundane (like pizza dough) or weird (like shark attacks in 1916).</itunes:summary>
+		<itunes:type>episodic</itunes:type>
+		<itunes:owner>
+			<itunes:name>Jim</itunes:name>
+			<itunes:email>podcasts33+197d9d08@anchor.fm</itunes:email>
+		</itunes:owner>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:category text="Education">
+			<itunes:category text="Self-Improvement"/>
+		</itunes:category>
+		<itunes:image href="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_nologo/4176626/4176626-1585370926102-c982ab4a9049f.jpg"/>
+		<item>
+			<title><![CDATA[Episode 1: What is Small Findings? Also painting darkness, mice handedness, and stimulus]]></title>
+			<description><![CDATA[<p>Findings this week are Woodrow Wilson being weak on sharks, Painting lots of darkness, &lt;script&gt; tags as elements, Hot water gaskets, mouse handedness, lap desks, pizza dough, pizza sausage, and the coronavirus stimulus package.</p>
+<p>Email me any findings your want to share (or questions) at smallfindings@fastmail.com !</p>
+<p>Here's the executive raise limit formula for companies that take stimulus assistance: (current pay - $3 million)/2 + $3 million&nbsp;</p>
+<p>(The / means "divided by" there.)</p>
+
+--- 
+
+Send in a voice message: https://anchor.fm/smallfindings/message]]></description>
+			<link>https://anchor.fm/smallfindings/episodes/Episode-1-What-is-Small-Findings--Also-painting-darkness--mice-handedness--and-stimulus-ec1lj8</link>
+			<guid isPermaLink="false">967c5395-6b10-4b40-a4f1-1d362ad1ce03</guid>
+			<dc:creator><![CDATA[Jim]]></dc:creator>
+			<pubDate>Sat, 28 Mar 2020 04:50:55 GMT</pubDate>
+			<enclosure url="https://anchor.fm/s/197d9d08/podcast/play/11637800/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2020-03-28%2F35361d6161421ede6635de18dc789fa7.m4a" length="20804645" type="audio/x-m4a"/>
+			<itunes:summary>&lt;p&gt;Findings this week are Woodrow Wilson being weak on sharks, Painting lots of darkness, &amp;lt;script&amp;gt; tags as elements, Hot water gaskets, mouse handedness, lap desks, pizza dough, pizza sausage, and the coronavirus stimulus package.&lt;/p&gt;
+&lt;p&gt;Email me any findings your want to share (or questions) at smallfindings@fastmail.com !&lt;/p&gt;
+&lt;p&gt;Here&apos;s the executive raise limit formula for companies that take stimulus assistance: (current pay - $3 million)/2 + $3 million&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;(The / means &quot;divided by&quot; there.)&lt;/p&gt;
+
+--- 
+
+Send in a voice message: https://anchor.fm/smallfindings/message</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>1285</itunes:duration>
+			<itunes:image href="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/4176626/4176626-1585369424032-69cdae538d10f.jpg"/>
+			<itunes:season>1</itunes:season>
+			<itunes:episode>1</itunes:episode>
+			<itunes:episodeType>full</itunes:episodeType>
+		</item>
+	</channel>
+</rss>
