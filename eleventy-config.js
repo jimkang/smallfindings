@@ -2,6 +2,10 @@ var pluginRss = require('@11ty/eleventy-plugin-rss');
 var fs = require('fs');
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy('media/*');
+  eleventyConfig.addPassthroughCopy('app.css');
+  eleventyConfig.addPassthroughCopy('episodes/**/*.mp3');
+
   eleventyConfig.addCollection('episodes', function(collection) {
     var filteredCollection = collection
       .getFilteredByGlob(['episodes/*.njk'])
