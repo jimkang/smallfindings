@@ -1,5 +1,5 @@
 {
-  "name": "small-findings",
+  "name": "smallfindings",
   "version": "1.0.0",
   "description": "The source for the Small Findings podcast.",
   "private": true,
@@ -7,7 +7,7 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git@github.com:jimkang/small-findings.git"
+    "url": "git@github.com:jimkang/smallfindings.git"
   },
   "keywords": [
     "request",
@@ -16,9 +16,9 @@
   "author": "Jim Kang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jimkang/small-findings/issues"
+    "url": "https://github.com/jimkang/smallfindings/issues"
   },
-  "homepage": "https://github.com/jimkang/small-findings",
+  "homepage": "https://github.com/jimkang/smallfindings",
   "devDependencies": {
     "eslint": "^6.8.0"
   },

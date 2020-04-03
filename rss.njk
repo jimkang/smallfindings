@@ -2,17 +2,17 @@
 permalink: rss
 metadata:
   title: Small Findings
-  url: https://jimkang.com/small-findings
+  url: https://jimkang.com/smallfindings
   author:
     name: Jim Kang
-    email: small-findings@fastmail.com
+    email: smallfindings@fastmail.com
   description: A roundup of small bits of information that I've collected, processed, and put away each week. Findings topics are often mundane (like pizza dough) or weird (like shark attacks in 1916).
-  imageURL: https://jimkang.com/small-findings/media/small-findings.png
+  imageURL: https://jimkang.com/smallfindings/media/smallfindings.png
   feed:
     filename: rss
     path: rss
-    url: https://jimkang.com/small-findings/rss
-    id: https://jimkang.com/small-findings/
+    url: https://jimkang.com/smallfindings/rss
+    id: https://jimkang.com/smallfindings/
 ---
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:anchor="https://anchor.fm/xmlns">
   <channel>
@@ -43,7 +43,7 @@ metadata:
 		</itunes:category>
 		<itunes:image href="{{ metadata.imageURL }}" />
     {%- for episode in collections.episodes -%}
-      {%- set filename -%}small-findings-{{ episode.data.number }}-{{ episode.data.slug }}.mp3{%- endset -%}
+      {%- set filename -%}smallfindings-{{ episode.data.number }}-{{ episode.data.slug }}.mp3{%- endset -%}
       {%- set fileURL -%}{{ metadata.url }}/episodes/{{ filename }}{%- endset -%}
       {%- set pageURL -%}{{ metadata.url }}/episodes/{{ episode.data.slug }}{%- endset -%}
       {%- set filePath -%}episodes/{{ filename }}{%- endset -%}

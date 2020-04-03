@@ -1,4 +1,4 @@
-small-findings
+smallfindings
 ==================
 
 The source for the Small Findings podcast.
