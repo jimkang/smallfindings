@@ -162,6 +162,10 @@ header h1 {
   border: hsla(0, 80%, 66%, 0.8) 3px solid;
 }
 
+.platform-directions {
+  font-size: 0.8em;
+}
+
 .separator {
   width: 50%;
   border: none;
