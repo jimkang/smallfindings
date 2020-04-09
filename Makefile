@@ -14,7 +14,7 @@ sync:
 
 episode-2:
 	cd src-audio/episode-2 && \
-    ./mono-to-stereo.sh
+    ./prepare-audio.sh
 	cd src-audio/episode-2 && \
   rm episode-2.wav && \
 	sox e2-cold-open.wav \
