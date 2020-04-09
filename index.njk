@@ -39,38 +39,31 @@
 
       <h2>Episodes</h2>
 
+
       <section class="media">
         <ul class="media-list centered-col">
+          {%- for episode in collections.episodes -%}
           <li class="pane">
             <div class="episode-title">
-              <a href="episodes/what-is-small-findings">
-                Episode 1: What is Small Findings? Also painting darkness, mice
-                handedness, and stimulus.
-              </a>
+              <a href="episodes/{{ episode.data.slug }}">{{ episode.data.title }}</a>
             </div>
-            <img src="media/cat-chair.jpg" alt="Episode image" />
+            <img src="media/{{ episode.data.imageFilename }}" alt="Episode image" />
             <audio
               class="episode-player"
               controls=""
               loop="true"
               preload="metadata"
-              src="episodes/smallfindings-1-what-is-small-findings.mp3"
+              src="episodes/smallfindings-{{ episode.data.number }}-{{ episode.data.slug }}.mp3"
             ></audio>
             <div class="text-caption">
-              Findings this week are Woodrow Wilson being weak on sharks,
-              Painting lots of darkness, &lt;script&gt; tags as elements, Hot
-              water gaskets, mouse handedness, lap desks, pizza dough, pizza
-              sausage, and the coronavirus stimulus package.<br /><br />
-              Email me any findings your want to share (or questions) at
-              smallfindings@fastmail.com !<br /><br />
-              Here's the executive raise limit formula for companies that take
-              stimulus assistance: (current pay - $3 million)/2 + $3 million.
-              (The / means "divided by" there.)
+              {{ episode.data.summary }}
+              <!-- TODO: Break links out into their own field. -->
             </div>
             <div class="time-stamp entry-meta">
-              <time datetime="2020-03-28">2020-03-28</time>
+              <time datetime="{{ episode.data.date }}">{{ episode.data.date }}</time>
             </div>
           </li>
+          {%- endfor -%}
         </ul>
       </section>
     </section>
