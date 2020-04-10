@@ -52,19 +52,7 @@ metadata:
       <item>
         <title><![CDATA[{{ src.title }}]]></title>
         <description><![CDATA[
-The findings this week:\n
-  {%- for finding in src.findings -%}
-      {{ finding.text }}\n
-      {%- if finding.links -%}
-        {%- for link in finding.links -%}
-           {{ link.name }}: {{ link.url }}\n
-        {%- endfor -%}
-      {%- endif -%}
-      {%- if finding.note -%}
-        {{ finding.note }}
-      {%- endif -%}
-  {%- endfor -%}
-Email me any findings you want to share (or questions) at smallfindings@fastmail.com!
+            {%- include 'findings.njk' -%}
 ]]></description>
         <link href="{{ pageURL }}"/>
         <guid isPermaLink="false">{{ fileURL }}</guid>

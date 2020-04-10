@@ -10,27 +10,7 @@
               preload="metadata"
               src="/smallfindings/episodes/smallfindings-{{ src.number }}-{{ src.slug }}.mp3"
             ></audio>
-            <div class="text-caption">
-              The findings this week:
-              <ol class="findings-list">
-                {%- for finding in src.findings -%}
-                  <li>
-                    <div>{{ finding.text }}</div>
-                    {% if finding.links %}
-                      <ul class="finding-links">
-                      {% for link in finding.links %}
-                         <li><a href="{{link.url}}">{{ link.name }}</a></li>
-                      {% endfor %}
-                      </ul>
-                    {% endif %}
-                    {% if finding.note %}
-                      <div>{{ finding.note }}</div>
-                    {% endif %}
-                  </li>
-                {%- endfor -%}
-              </ol>
-  Email me any findings you want to share (or questions) at smallfindings@fastmail.com!
-            </div>
+            {% include 'findings.njk' %}
             <div class="time-stamp entry-meta">
               <time datetime="{{ src.date }}">{{ src.date }}</time>
             </div>
