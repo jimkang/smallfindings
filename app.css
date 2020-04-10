@@ -128,6 +128,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  margin-bottom: 1em;
 }
 
 header img {
@@ -152,7 +153,6 @@ header h1 {
 }
 
 .podcast-summary {
-  margin-top: 1em;
 }
 
 .listening-directions {

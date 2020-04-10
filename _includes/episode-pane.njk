@@ -1,0 +1,20 @@
+        <li class="pane">
+            <div class="episode-title">
+              <a href="/smallfindings/episodes/{{ src.slug }}">{{ src.title }}</a>
+            </div>
+            <img src="/smallfindings/media/{{ src.imageFilename }}" alt="Episode image" />
+            <audio
+              class="episode-player"
+              controls=""
+              loop="true"
+              preload="metadata"
+              src="/smallfindings/episodes/smallfindings-{{ src.number }}-{{ src.slug }}.mp3"
+            ></audio>
+            <div class="text-caption">
+              {{ src.summary }}
+              <!-- TODO: Break links out into their own field. -->
+            </div>
+            <div class="time-stamp entry-meta">
+              <time datetime="{{ src.date }}">{{ src.date }}</time>
+            </div>
+          </li>

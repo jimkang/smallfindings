@@ -4,13 +4,14 @@ HOMEDIR = $(shell pwd)
 
 build:
 	npx @11ty/eleventy \
-    --config=eleventy-config.js
+    --config=eleventy-config.js \
+    --output=smallfindings
 
 pushall: sync
 	git push origin master
 
 sync:
-	s3cmd sync --acl-public _site/ s3://$(BUCKET)/$(APPDIR)/
+	s3cmd sync --acl-public smallfindings/ s3://$(BUCKET)/$(APPDIR)/
 
 episode-2:
 	cd src-audio/episode-2 && \

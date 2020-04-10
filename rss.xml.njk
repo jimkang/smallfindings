@@ -43,25 +43,26 @@ metadata:
 		</itunes:category>
 		<itunes:image href="{{ metadata.imageURL }}" />
     {%- for episode in collections.episodes -%}
-      {%- set filename -%}smallfindings-{{ episode.data.number }}-{{ episode.data.slug }}.mp3{%- endset -%}
+      {%- set src = episode.data.stuff -%}
+      {%- set filename -%}smallfindings-{{ src.number }}-{{ src.slug }}.mp3{%- endset -%}
       {%- set fileURL -%}{{ metadata.url }}/episodes/{{ filename }}{%- endset -%}
-      {%- set pageURL -%}{{ metadata.url }}/episodes/{{ episode.data.slug }}{%- endset -%}
+      {%- set pageURL -%}{{ metadata.url }}/episodes/{{ src.slug }}{%- endset -%}
       {%- set filePath -%}episodes/{{ filename }}{%- endset -%}
-      {%- set imageURL -%}{{ metadata.url }}/media/{{ episode.data.imageFilename }}{%- endset -%}
+      {%- set imageURL -%}{{ metadata.url }}/media/{{ src.imageFilename }}{%- endset -%}
       <item>
-        <title><![CDATA[{{ episode.data.title }}]]></title>
-        <description><![CDATA[{{ episode.data.summary }}]]></description>
+        <title><![CDATA[{{ src.title }}]]></title>
+        <description><![CDATA[{{ src.summary }}]]></description>
         <link href="{{ pageURL }}"/>
         <guid isPermaLink="false">{{ fileURL }}</guid>
         <dc:creator><![CDATA[{{ metadata.author.name }}]]></dc:creator>
-        <pubDate>{{ episode.data.date.toUTCString() }}</pubDate>
+        <pubDate>{{ src.date }}</pubDate>
         <enclosure type="audio/mpeg" url="{{ fileURL }}" length="{{ filePath | length }}"/>
-        <itunes:summary>{{ episode.data.summary }}</itunes:summary>
+        <itunes:summary>{{ src.summary }}</itunes:summary>
         <itunes:explicit>No</itunes:explicit>
-        <itunes:duration>{{ episode.data.seconds }}</itunes:duration>
+        <itunes:duration>{{ src.seconds }}</itunes:duration>
         <itunes:image href="{{ imageURL }}"/>
-        <itunes:season>{{ episode.data.season }}</itunes:season>
-        <itunes:episode>{{ episode.data.number }}</itunes:episode>
+        <itunes:season>{{ src.season }}</itunes:season>
+        <itunes:episode>{{ src.number }}</itunes:episode>
         <itunes:episodeType>full</itunes:episodeType>
       </item>
       {%- endfor -%}
