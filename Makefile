@@ -22,15 +22,6 @@ episode-2:
     theme-high.wav \
     e2-intro.wav \
     theme-high.wav \
-    e2-volcano-1.wav \
-    e2-volcano-2.wav \
-    theme-high.wav \
-    e2-sleep-1.wav \
-    theme-high.wav \
-    e2-sleep-2.wav \
-    theme-high.wav \
-    e2-food.wav \
-    theme-high.wav \
     e2-signing-statement.wav \
     theme-high.wav \
     e2-art.wav \
@@ -42,6 +33,8 @@ episode-2:
     e2-wistia.wav \
     theme-high.wav \
     e2-ads.wav \
+    theme-high.wav \
+    e2-food.wav \
     theme-high.wav \
     e2-wily.wav \
     theme-low.wav \
