@@ -39,14 +39,12 @@
 
       <h2>Episodes</h2>
 
-      <section class="media">
-        <ul class="media-list centered-col">
-          {%- for episode in collections.episodes -%}
-            {% set src = episode.data.stuff %}
-            {% include 'episode-pane.njk' %}
-          {%- endfor -%}
-        </ul>
-      </section>
+      <ul class="media-list centered-col">
+        {%- for episode in collections.episodes -%}
+          {% set src = episode.data.stuff %}
+          {% include 'episode-pane.njk' %}
+        {%- endfor -%}
+      </ul>
     </section>
 
     <hr class="separator" />
