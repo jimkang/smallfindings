@@ -1,7 +1,7 @@
 smallfindings
 ==================
 
-The source for the [Small Findings podcast](jimkang.com/smallfindings/). Uses eleventy to build the feed and site. Maybe you can use this to make your own podcat?
+The source for the [Small Findings podcast](jimkang.com/smallfindings/). Uses eleventy to build the feed and site. Maybe you can use this to make your own podcast?
 
 Installation
 ------------
