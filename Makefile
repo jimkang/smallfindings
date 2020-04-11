@@ -14,8 +14,7 @@ sync:
 	s3cmd sync --acl-public smallfindings/ s3://$(BUCKET)/$(APPDIR)/
 
 episode-2:
-	cd src-audio/episode-2 && \
-    ./prepare-audio.sh
+	./prepare-audio.sh src-audio/episode-2
 	cd src-audio/episode-2 && \
   rm episode-2.wav && \
 	sox e2-cold-open.wav \

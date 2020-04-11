@@ -1,8 +1,9 @@
   #!/bin/bash
 
-  dir=mono
-  stereodir=stereo
-  outdir=.
+  basedir=$1
+  dir=${basedir}/mono
+  stereodir=${basedir}/stereo
+  outdir=${basedir}
   for file in ${dir}/*.wav
   do
     filename=${file##*/}
