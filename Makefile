@@ -42,3 +42,30 @@ episode-2:
     --tt "Small Findings Episode 2: Still Eruption Columns" \
     --ta "Jim Kang" \
     --ty 2020
+
+episode-3:
+	#./prepare-audio.sh src-audio/episode-3
+	cd src-audio/episode-3 && \
+	sox \
+    ../common/theme-high.wav \
+    e3-intro.wav \
+    ../common/theme-high.wav \
+    e3-conspiracy-theories.wav \
+    ../common/theme-piano.wav \
+    e3-volcanic-lightning.wav \
+    when-theres-lightning.wav \
+    e3-space-elevator.wav \
+    ../common/theme-piano.wav \
+    e3-china.wav \
+    ../common/theme-high.wav \
+    e3-harvard.wav \
+    ../common/theme-piano.wav \
+    e3-icus.wav \
+    ../common/theme-piano.wav \
+    e3-closing.wav \
+    ../common/theme-low.wav \
+    episode-3.wav
+	lame src-audio/episode-3/episode-3.wav episodes/smallfindings-3-when-theres-lightning.mp3 \
+    --tt "Small Findings Episode 3: When There's Lightning" \
+    --ta "Jim Kang" \
+    --ty 2020
