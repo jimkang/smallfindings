@@ -11,6 +11,8 @@
       content="A podcast containing small bits of information that I've collected recently."
     />
     <meta property="og:site_name" content="Small Findings" />
+    {% set latestEpisodeStuff = stuff %}
+    {% include 'latest-episode-unfurl.njk' %}
   </head>
   <body class="centered-col">
     <a href="/smallfindings/">
