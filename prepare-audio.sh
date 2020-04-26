@@ -4,6 +4,7 @@
   dir=${basedir}/mono
   stereodir=${basedir}/stereo
   outdir=${basedir}
+  mkdir -p "${stereodir}"
   for file in ${dir}/*.wav
   do
     filename=${file##*/}
