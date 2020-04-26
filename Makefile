@@ -50,18 +50,19 @@ episode-3:
     ../common/theme-high.wav \
     e3-intro.wav \
     ../common/theme-high.wav \
-    e3-conspiracy-theories.wav \
-    ../common/theme-piano.wav \
-    e3-volcanic-lightning.wav \
-    when-theres-lightning.wav \
-    e3-space-elevator.wav \
-    ../common/theme-piano.wav \
     e3-china.wav \
     ../common/theme-high.wav \
     e3-harvard.wav \
     ../common/theme-piano.wav \
     e3-icus.wav \
     ../common/theme-piano.wav \
+    e3-conspiracy-theories.wav \
+    ../common/theme-piano.wav \
+    e3-volcanic-lightning.wav \
+    when-theres-lightning.wav \
+    ../common/theme-high.wav \
+    e3-space-elevator.wav \
+    ../common/theme-high.wav \
     e3-closing.wav \
     ../common/theme-low.wav \
     episode-3.wav
