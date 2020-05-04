@@ -1,2 +1,10 @@
+
+    <meta property="og:title" content="Small Findings {{ latestEpisodeStuff.title }}" />
+    <meta property="og:url" content="https://jimkang.com/smallfindings/{{ latestEpisodeStuff.slug }}" />
+    {%- set src = latestEpisodeStuff -%}
+    <meta
+      property="og:description"
+      content="{%- include 'text-findings.njk' %}"
+    />
     <meta property="og:image" content="https://jimkang.com/smallfindings/media/{{latestEpisodeStuff.imageFilename}}" />
     <meta property="og:audio" content="https://jimkang.com/smallfindings/episodes/smallfindings-{{ latestEpisodeStuff.number }}-{{ latestEpisodeStuff.slug }}.mp3" />
