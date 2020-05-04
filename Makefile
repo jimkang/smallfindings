@@ -70,3 +70,28 @@ episode-3:
     --tt "Small Findings Episode 3: When There's Lightning" \
     --ta "Jim Kang" \
     --ty 2020
+
+episode-4:
+	#./prepare-audio.sh src-audio/episode-4
+	cd src-audio/episode-4 && \
+	sox \
+    ../common/theme-high.wav \
+    e4-intro.wav \
+    ../common/theme-high.wav \
+    e4-pizza-deployment.wav \
+    ../common/theme-high.wav \
+    e4-stock-buybacks.wav \
+    ../common/theme-piano.wav \
+    e4-amazon-and-labor.wav \
+    ../common/theme-high.wav \
+    e4-testament.wav \
+    night-of-the-witch-sample.wav \
+    e4-existential-risk.wav \
+    ../common/theme-high.wav \
+    e4-closing.wav \
+    ../common/theme-low.wav \
+    episode-4.wav
+	lame src-audio/episode-4/episode-4.wav episodes/smallfindings-4-theres-gotta-be-a-better-way.mp3 \
+    --tt "Small Findings Episode 4: There's gotta be a better way" \
+    --ta "Jim Kang" \
+    --ty 2020
