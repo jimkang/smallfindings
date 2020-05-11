@@ -97,9 +97,10 @@ episode-4:
     --ty 2020
 
 episode-5:
-	# ./prepare-audio.sh src-audio/episode-5
+	./prepare-audio.sh src-audio/episode-5
 	cd src-audio/episode-5 && \
 	sox \
+    theme-anderson.wav \
     ../common/theme-high.wav \
     e5-intro.wav \
     ../common/theme-high.wav \
