@@ -95,3 +95,31 @@ episode-4:
     --tt "Small Findings Episode 4: There's gotta be a better way" \
     --ta "Jim Kang" \
     --ty 2020
+
+episode-5:
+	# ./prepare-audio.sh src-audio/episode-5
+	cd src-audio/episode-5 && \
+	sox \
+    ../common/theme-high.wav \
+    e5-intro.wav \
+    ../common/theme-high.wav \
+    e5-paynes-gray.wav \
+    ../common/theme-high.wav \
+    e5-witch-of-endor.wav \
+    ../common/theme-high.wav \
+    e5-surprising-cambridge-businesses.wav \
+    ../common/theme-piano.wav \
+    e5-magnetars.wav \
+    ../common/theme-high.wav \
+    e5-cdns.wav \
+    e5-cdn-postscript.wav \
+    ../common/theme-high.wav \
+    e5-thing-at-end-of-faucet.wav \
+    ../common/theme-high.wav \
+    e5-closing.wav \
+    ../common/theme-low.wav \
+    episode-5.wav
+	lame src-audio/episode-5/episode-5.wav episodes/smallfindings-5-the-devils-ghost.mp3 \
+    --tt "Small Findings Episode 5: The Devil's Ghost" \
+    --ta "Jim Kang" \
+    --ty 2020
