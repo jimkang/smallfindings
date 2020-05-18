@@ -124,3 +124,28 @@ episode-5:
     --tt "Small Findings Episode 5: The Devil's Ghost" \
     --ta "Jim Kang" \
     --ty 2020
+
+episode-6:
+	#./prepare-audio.sh src-audio/episode-6
+	cd src-audio/episode-6 && \
+	sox \
+    e6-dr-wily-start.wav \
+    ../common/theme-high.wav \
+    e6-intro.wav \
+    ../common/theme-high.wav \
+    e6-pizza-parchment-paper.wav \
+    ../common/theme-high.wav \
+    e6-delivery-services.wav \
+    ../common/theme-piano.wav \
+    e6-pasquallys.wav \
+    ../common/theme-high.wav \
+    e6-puff-functionality.wav \
+    ../episode-3/when-theres-lightning.wav \
+    e6-closing.wav \
+    ../common/theme-low.wav \
+    e6-epilogue.wav \
+    episode-6.wav
+	lame src-audio/episode-6/episode-6.wav episodes/smallfindings-6-reevaluating-dirrty-puff.mp3 \
+    --tt "Small Findings Episode 6: Reevaluating Dirrty Puff" \
+    --ta "Jim Kang" \
+    --ty 2020
