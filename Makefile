@@ -149,3 +149,31 @@ episode-6:
     --tt "Small Findings Episode 6: Reevaluating Dirrty Puff" \
     --ta "Jim Kang" \
     --ty 2020
+
+episode-7:
+	./prepare-audio.sh src-audio/episode-7
+	cd src-audio/episode-7 && \
+	sox \
+    ../common/theme-high.wav \
+    e7-intro.wav \
+    ../common/theme-high.wav \
+    e7-gravitational-lensing.wav \
+    ../common/theme-high.wav \
+    e7-lotr-tone-a.wav \
+    e7-on-wood-elves.wav \
+    e7-lotr-tone-b.wav \
+    ../common/theme-piano.wav \
+    e7-lotr-appeal-a.wav \
+    e7-lotr-enough-information.wav \
+    e7-lotr-appeal-b.wav \
+    ../common/theme-high.wav \
+    e7-hamburger-flavoring.wav \
+    ../common/theme-high.wav \
+    e7-closing.wav \
+    ../common/theme-low.wav \
+    e7-was-that-scary.wav \
+    episode-7.wav
+	lame src-audio/episode-7/episode-7.wav episodes/smallfindings-7-master-hamfast.mp3 \
+    --tt "Small Findings Episode 7: Master Hamfast" \
+    --ta "Jim Kang" \
+    --ty 2020
