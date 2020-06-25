@@ -177,3 +177,25 @@ episode-7:
     --tt "Small Findings Episode 7: Master Hamfast" \
     --ta "Jim Kang" \
     --ty 2020
+
+episode-8:
+	./prepare-audio.sh src-audio/episode-8
+	cd src-audio/episode-8 && \
+	sox \
+    ../common/theme-high.wav \
+    e8-intro.wav \
+    ../common/theme-high.wav \
+    polio-take-2.wav \
+    ../common/theme-high.wav \
+    whites-closing-ranks-a.wav \
+    daily-satilla-shores.wav \
+    whites-closing-ranks-b.wav \
+    ../common/somber-sting.wav \
+    cambridge-police.wav \
+    ../common/somber-sting.wav \
+    e8-closing.wav \
+    episode-8.wav
+	lame src-audio/episode-8/episode-8.wav episodes/smallfindings-8-then-and-now.mp3 \
+    --tt "Small Findings Episode 8: Then and Now" \
+    --ta "Jim Kang" \
+    --ty 2020
