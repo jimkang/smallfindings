@@ -199,3 +199,48 @@ episode-8:
     --tt "Small Findings Episode 8: Then and Now" \
     --ta "Jim Kang" \
     --ty 2020
+
+episode-9:
+	./prepare-audio.sh src-audio/episode-9
+	cd src-audio/episode-9 && \
+	sox \
+    cold-open.wav \
+    ../common/silence-700ms.wav \
+    ../common/theme-high.wav \
+    opening.wav \
+    ../common/theme-high.wav \
+    bridge-narration-1.wav \
+    bridge-1.wav \
+    ../common/silence-700ms.wav \
+    bridge-narration-2.wav \
+    bridge-2.wav \
+    ../common/silence-700ms.wav \
+    bridge-narration-3.wav \
+    ../common/silence-700ms.wav \
+    bridge-3.wav \
+    bridge-narration-4.wav \
+    bridge-4.wav \
+    bridge-narration-5.wav \
+    bridge-5.wav \
+    bridge-narration-6.wav \
+    bridge-6.wav \
+    bridge-narration-7.wav \
+    ../common/silence-700ms.wav \
+    ../common/silence-700ms.wav \
+    ../common/theme-high.wav \
+    literal-nazi-speech.wav \
+    ../common/theme-high.wav \
+    ../common/silence-700ms.wav \
+    work-force.wav \
+    ../common/silence-700ms.wav \
+    ../common/theme-high.wav \
+    library-book-drop.wav \
+    ../common/silence-700ms.wav \
+    ../common/theme-high.wav \
+    closing.wav \
+    ../common/theme-low.wav \
+    episode-9.wav
+	lame src-audio/episode-9/episode-9.wav episodes/smallfindings-9-land-of-wonder.mp3 \
+    --tt "Small Findings Episode 9: Land of Wonder" \
+    --ta "Jim Kang" \
+    --ty 2020
