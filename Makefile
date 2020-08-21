@@ -244,3 +244,38 @@ episode-9:
     --tt "Small Findings Episode 9: Land of Wonder" \
     --ta "Jim Kang" \
     --ty 2020
+
+episode-10:
+	./prepare-audio.sh src-audio/episode-10
+	cd src-audio/episode-10 && \
+	sox \
+    ../common/theme-high.wav \
+    intro.wav \
+    ../common/theme-high.wav \
+    surnameless.wav \
+    ../common/theme-high.wav \
+    gomboc.wav \
+    ../common/theme-high.wav \
+    lenin-1.wav \
+    lenin-quote-1.wav \
+    lenin-2.wav \
+    lenin-quote-2.wav \
+    lenin-3.wav \
+    lenin-quote-3.wav \
+    lenin-4.wav \
+    lenin-quote-4.wav \
+    lenin-5.wav \
+    lenin-quote-5.wav \
+    lenin-6.wav \
+    lenin-quote-6.wav \
+    lenin-7.wav \
+    lenin-quote-7.wav \
+    lenin-8.wav \
+    ../common/theme-high.wav \
+    closing.wav \
+    ../common/theme-low.wav \
+    episode-10.wav
+	lame src-audio/episode-10/episode-10.wav episodes/smallfindings-10-the-gomboc.mp3 \
+    --tt "Small Findings Episode 10: The Gömböc" \
+    --ta "Jim Kang" \
+    --ty 2020
