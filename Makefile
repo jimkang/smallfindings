@@ -279,3 +279,30 @@ episode-10:
     --tt "Small Findings Episode 10: The Gömböc" \
     --ta "Jim Kang" \
     --ty 2020
+
+episode-11:
+	./prepare-audio.sh src-audio/episode-11
+	cd src-audio/episode-11 && \
+	sox \
+    ../common/theme-high.wav \
+    intro-e11.wav \
+    ../common/theme-high.wav \
+    autocorrelation.wav \
+    ../common/theme-high.wav \
+    llc.wav \
+    ../common/theme-high.wav \
+    woods-1.wav \
+    ../common/silence-700ms.wav \
+    woods-2.wav \
+    ../common/silence-700ms.wav \
+    woods-3.wav \
+    ../common/silence-700ms.wav \
+    woods-4.wav \
+    ../common/theme-piano.wav \
+    closing-e11.wav \
+    ../common/theme-low.wav \
+    episode-11.wav
+	lame src-audio/episode-11/episode-11.wav episodes/smallfindings-11-100000-hot-dogs.mp3 \
+    --tt "Small Findings Episode 11: 100,000 Hot Dogs" \
+    --ta "Jim Kang" \
+    --ty 2020
