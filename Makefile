@@ -7,6 +7,12 @@ build:
     --config=eleventy-config.js \
     --output=smallfindings
 
+serve:
+	npx @11ty/eleventy \
+    --config=eleventy-config.js \
+    --output=smallfindings \
+    --serve
+
 pushall: sync
 	git push origin master
 

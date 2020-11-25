@@ -2,6 +2,10 @@ var pluginRss = require('@11ty/eleventy-plugin-rss');
 var fs = require('fs');
 
 module.exports = function(eleventyConfig) {
+  // This makes `make serve` serve the site at localhost:8080/smallfindings
+  eleventyConfig.setBrowserSyncConfig({
+    server: '.'
+  });
   eleventyConfig.addPassthroughCopy('media/*');
   eleventyConfig.addPassthroughCopy('app.css');
   eleventyConfig.addPassthroughCopy('episodes/**/*.mp3');
