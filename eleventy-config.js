@@ -22,7 +22,7 @@ module.exports = function(eleventyConfig) {
 };
 
 function compareDatesDesc(a, b) {
-  return b.date - a.date;
+  return b.data.stuff.date - a.data.stuff.date;
 }
 
 function getFileLength(filePath) {
