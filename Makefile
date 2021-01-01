@@ -312,3 +312,27 @@ episode-11:
     --tt "Small Findings Episode 11: 100,000 Hot Dogs" \
     --ta "Jim Kang" \
     --ty 2020
+
+episode-12:
+	./prepare-audio.sh src-audio/episode-12
+	cd src-audio/episode-12 && \
+	sox \
+    ../common/theme-high.wav \
+    e12-intro.wav \
+    ../common/theme-high.wav \
+    pasta.wav \
+    ../common/theme-high.wav \
+    snuff.wav \
+    ../common/theme-high.wav \
+    cats-a.wav \
+    ../common/theme-piano.wav \
+    cats-b.wav \
+    ../common/theme-high.wav \
+    e12-closing.wav \
+    ../common/theme-low.wav \
+    outtake-katt.wav \
+    episode-12.wav
+	lame src-audio/episode-12/episode-12.wav episodes/smallfindings-12-pasta-snuff-and-cats.mp3 \
+    --tt "Small Findings Episode 12: Pasta, Snuff, and Cats" \
+    --ta "Jim Kang" \
+    --ty 2020
