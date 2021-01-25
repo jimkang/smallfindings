@@ -336,3 +336,28 @@ episode-12:
     --tt "Small Findings Episode 12: Pasta, Snuff, and Cats" \
     --ta "Jim Kang" \
     --ty 2020
+
+episode-13:
+	./prepare-audio.sh src-audio/episode-13
+	cd src-audio/episode-13 && \
+	sox \
+    ../common/theme-high.wav \
+    e13-opening.wav \
+    ../common/theme-high.wav \
+    paid-for-art.wav \
+    ../common/theme-high.wav \
+    roomba-redux.wav \
+    ../common/theme-high.wav \
+    seph.wav \
+    ../common/theme-piano.wav \
+    filamentation.wav \
+    ../common/theme-piano.wav \
+    linebreaks.wav \
+    ../common/theme-high.wav \
+    e13-closing.wav \
+    ../common/theme-low.wav \
+    episode-13.wav
+	lame src-audio/episode-13/episode-13.wav episodes/smallfindings-13-who-is-the-robot-now.mp3 \
+    --tt "Small Findings Episode 13: Who Is the Robot Now?" \
+    --ta "Jim Kang" \
+    --ty 2021
