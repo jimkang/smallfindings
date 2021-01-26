@@ -8,23 +8,20 @@
     {% set latestEpisodeStuff = stuff %}
     {% include 'latest-episode-unfurl.njk' %}
   </head>
-  <body class="centered-col">
-    <a href="/smallfindings/">
-      <header>
+  <body>
+    <header>
+      <a href="/smallfindings/">
         <img src="/smallfindings/media/small-findings-wily-square.jpg" alt="Dr. Wily, a cat" />
         <h1>Small Findings</h1>
-      </header>
-    </a>
-
-    <section class="middle">
+      </a>
       <div class="listening-directions">
         Point your podcast app at the <a href="/smallfindings/rss.xml">RSS feed</a> to listen!
       </div>
-      <br>
+    </header>
+
+    <section class="middle">
       {{ content | safe }}
     </section>
-
-    <hr class="separator" />
 
     <footer id="footer">
       <div>

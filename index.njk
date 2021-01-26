@@ -30,7 +30,7 @@
     </header>
 
     <section class="middle">
-      <ul class="media-list centered-col">
+      <ul class="media-list">
         {%- for episode in collections.episodes -%}
           {% set src = episode.data.stuff %}
           {% include 'episode-pane.njk' %}
