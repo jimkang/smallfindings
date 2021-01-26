@@ -196,6 +196,10 @@ header h1 {
   margin-top: var(--u);
 }
 
+.recs-root dt {
+  margin-bottom: var(--gap);
+}
+
 @media all and (max-width: 586px) {
   body {
     font-size: calc(1.5*var(--u));
