@@ -14,13 +14,10 @@
     {% set latestEpisodeStuff = collections.episodes[0].data.stuff %}
     {% include 'latest-episode-unfurl.njk' %}
   </head>
-  <body class="centered-col">
+  <body>
     <header>
       <img src="media/small-findings-wily-square.jpg" alt="Dr. Wily, a cat" />
       <h1>Small Findings</h1>
-    </header>
-
-    <section class="middle">
       <div class="podcast-summary">
         A podcast that rounds up of small bits of information that I've
         collected and processed each week. Findings are mundane (like what flour
@@ -31,20 +28,17 @@
       </div>
       <br>
       {% include 'platform-links.njk' %}
+    </header>
 
+    <section class="middle">
       <h2>Episodes</h2>
-
-      <section class="media">
-        <ul class="media-list centered-col">
-          {%- for episode in collections.episodes -%}
-            {% set src = episode.data.stuff %}
-            {% include 'episode-pane.njk' %}
-          {%- endfor -%}
-        </ul>
-      </section>
+      <ul class="media-list centered-col">
+        {%- for episode in collections.episodes -%}
+          {% set src = episode.data.stuff %}
+          {% include 'episode-pane.njk' %}
+        {%- endfor -%}
+      </ul>
     </section>
-
-    <hr class="separator" />
 
     <footer id="footer">
       <div>
