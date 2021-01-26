@@ -16,12 +16,12 @@ body {
   flex-wrap: wrap;
   align-items: start;
   margin: 0;
+  margin-top: var(--gap);
+  gap: var(--gap);
 }
 
 body > * {
   width: calc(var(--col));
-  margin-left: calc(2*var(--u));
-  margin-right: calc(2*var(--u));
 }
 
 .centered-col {
@@ -32,7 +32,7 @@ body > * {
 
 a:link {
   color: #302525;
-  /*! font-weight: bold; */
+  font-weight: 500;
 }
 
 a:visited {
@@ -40,8 +40,6 @@ a:visited {
 }
 
 footer {
-  padding: var(--gap);
-  font-size: 0.8em;
 }
 
 ul {
@@ -51,7 +49,7 @@ ul {
 
 .time-stamp {
   margin-top: var(--gap);
-  font-size: 0.6em;
+  font-size: 0.75em;
   text-align: right;
 }
 
@@ -85,10 +83,11 @@ ul {
   padding: var(--gap);
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
+  border-radius: var(--u);
 }
 
 .pane img {
+  border-radius: var(--u) var(--u) 0 0;
   width: var(--bl);
   max-width: 100%;
   height: auto;
@@ -97,17 +96,20 @@ ul {
 }
 
 .episode-player {
+  border-radius: 0 0 var(--u) var(--u);
   width: var(--bl);
   max-width: 100%;
-  margin-bottom: calc(3*var(--u));
+  margin-bottom: calc(2*var(--gap));
 }
 
+.pane a:link {
+}
 .media-list .pane h4:first-child {
   margin-top: 0;
 }
 
 .media-list li {
-  margin-bottom: calc(3*var(--u));
+  margin-bottom: calc(2*var(--gap));
 }
 
 .media-list h3 {
@@ -123,11 +125,11 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  margin-bottom: var(--gap);
 }
 
 header img {
-  width: var(--bl);
-  height: var(--bl);
+  width: 100%;
   border-radius: var(--u);
 }
 
@@ -135,17 +137,18 @@ header h1 {
   font-size: 4em;
   flex-grow: 1;
   margin: 0;
-  margin-left: calc(2*var(--u));
-  width: 50%;
 }
 
 .podcast-summary {
-  grid-column-start: 1;
-  grid-column-end: span 2;
+  margin-top: var(--gap);
 }
 
 .middle {
   flex-grow: 1;
+}
+
+.middle h2:first-child {
+  margin-top: 0;
 }
 
 .listening-directions {
@@ -153,9 +156,15 @@ header h1 {
   padding: calc(3*var(--u));
   border-radius: 0.25em;
   border: hsla(0, 80%, 66%, 0.8) 3px solid;
+  font-weight: bold;
+}
+
+.listening-directions a:link {
+  color: hsl(0, 80%, 55%);
 }
 
 .platform-directions {
+  margin-top: var(--gap);
 }
 
 .separator {
@@ -175,7 +184,12 @@ header h1 {
 }
 
 .findings-list {
-  margin-top: calc(3*var(--u));
+  padding: 1em;
+}
+
+.findings-list li {
+  margin-top: calc(1*var(--gap));
+  margin-bottom: calc(1*var(--gap));
 }
 
 .finding-links {
@@ -185,6 +199,7 @@ header h1 {
 @media all and (max-width: 586px) {
   body {
     font-size: calc(1.5*var(--u));
+    margin-top: 0;
   }
 
   header h1 {

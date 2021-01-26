@@ -19,19 +19,17 @@
       <img src="media/small-findings-wily-square.jpg" alt="Dr. Wily, a cat" />
       <h1>Small Findings</h1>
       <div class="podcast-summary">
-        A podcast that rounds up of small bits of information that I've
+        A podcast that rounds up bits of information that I've
         collected and processed each week. Findings are mundane (like what flour
         mix to use in pizza dough) or weird (like shark attacks in 1916).
       </div>
       <div class="listening-directions">
         Point your podcast app at the <a href="rss.xml">RSS feed</a> to listen!
       </div>
-      <br>
       {% include 'platform-links.njk' %}
     </header>
 
     <section class="middle">
-      <h2>Episodes</h2>
       <ul class="media-list centered-col">
         {%- for episode in collections.episodes -%}
           {% set src = episode.data.stuff %}
