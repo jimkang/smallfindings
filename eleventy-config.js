@@ -1,5 +1,6 @@
 var pluginRss = require('@11ty/eleventy-plugin-rss');
 var fs = require('fs');
+var yaml = require('yamljs');
 
 module.exports = function(eleventyConfig) {
   // This makes `make serve` serve the site at localhost:8080/smallfindings
@@ -17,8 +18,10 @@ module.exports = function(eleventyConfig) {
     console.log('filteredCollection', filteredCollection);
     return filteredCollection;
   });
+
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addFilter('length', getFileLength);
+  eleventyConfig.addDataExtension('yaml', contents => yaml.parse(contents));
 };
 
 function compareDatesDesc(a, b) {

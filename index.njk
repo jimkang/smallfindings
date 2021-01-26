@@ -14,37 +14,29 @@
     {% set latestEpisodeStuff = collections.episodes[0].data.stuff %}
     {% include 'latest-episode-unfurl.njk' %}
   </head>
-  <body class="centered-col">
+  <body>
     <header>
       <img src="media/small-findings-wily-square.jpg" alt="Dr. Wily, a cat" />
       <h1>Small Findings</h1>
-    </header>
-
-    <section class="middle">
       <div class="podcast-summary">
-        A podcast that rounds up of small bits of information that I've
+        A podcast that rounds up bits of information that I've
         collected and processed each week. Findings are mundane (like what flour
         mix to use in pizza dough) or weird (like shark attacks in 1916).
       </div>
       <div class="listening-directions">
         Point your podcast app at the <a href="rss.xml">RSS feed</a> to listen!
       </div>
-      <br>
       {% include 'platform-links.njk' %}
+    </header>
 
-      <h2>Episodes</h2>
-
-      <section class="media">
-        <ul class="media-list centered-col">
-          {%- for episode in collections.episodes -%}
-            {% set src = episode.data.stuff %}
-            {% include 'episode-pane.njk' %}
-          {%- endfor -%}
-        </ul>
-      </section>
+    <section class="middle">
+      <ul class="media-list">
+        {%- for episode in collections.episodes -%}
+          {% set src = episode.data.stuff %}
+          {% include 'episode-pane.njk' %}
+        {%- endfor -%}
+      </ul>
     </section>
-
-    <hr class="separator" />
 
     <footer id="footer">
       <div>
@@ -58,34 +50,10 @@
         This site (and podcast feed) is built via
         <a href="https://www.11ty.dev/">Eleventy</a>. <br /><br />
         More podcasts to listen to:
-        <ul>
-          <li>
-            <a href="https://www.idlethumbs.net/idlethumbs/">Idle Thumbs</a>
-            (It's over but still amazing.)
-          </li>
-          <li>
-            <a href="https://www.nytimes.com/column/the-daily">The Daily</a>
-            (It's basic but actually good.)
-          </li>
-          <li>
-            <a href="https://www.earhustlesq.com/">Ear Hustle</a> (The rare
-            genuinely unique perspective.)
-          </li>
-          <li>
-            <a href="https://memex.naughtons.org"
-              >John Naughton's online diary</a
-            >
-            (The audio is interspersed among blog posts)
-          </li>
-          <li>
-            <a href="https://www.talkingpoliticspodcast.com/"
-              >Talking Politics</a
-            >
-            (It's <em>not</em> a bunch of yelling.)
-          </li>
-        </ul>
+        {% include 'recs-pane-podcast.njk' %}
       </div>
-      <a href="https://jimkang.com">jimkang.com</a>
+      <br />
+      My homepage: <a href="https://jimkang.com">jimkang.com</a>
     </footer>
   </body>
 </html>
