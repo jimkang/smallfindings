@@ -361,3 +361,30 @@ episode-13:
     --tt "Small Findings Episode 13: Who Is the Robot Now?" \
     --ta "Jim Kang" \
     --ty 2021
+
+episode-14:
+	./prepare-audio.sh src-audio/episode-14
+	cd src-audio/episode-14 && \
+	sox \
+    ../common/theme-high.wav \
+    e14-opening.wav \
+    ../common/theme-high.wav \
+    cleary.wav \
+    ../common/theme-high.wav \
+    sun-ra-1.wav \
+    ../common/theme-high.wav \
+    cadr.wav \
+    ../common/theme-high.wav \
+    douglass.wav \
+    ../common/theme-high.wav \
+    buxton.wav \
+    ../common/theme-high.wav \
+    e14-closing-a.wav \
+    ../common/theme-piano.wav \
+    e14-closing-b.wav \
+    ../common/theme-low.wav \
+    episode-14.wav
+	lame src-audio/episode-14/episode-14.wav episodes/smallfindings-14-recumbent-findings.mp3 \
+    --tt "Small Findings Episode 14: Recumbent Findings" \
+    --ta "Jim Kang" \
+    --ty 2021

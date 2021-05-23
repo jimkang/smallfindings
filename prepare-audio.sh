@@ -1,10 +1,20 @@
   #!/bin/bash
 
   basedir=$1
+  m4adir=${basedir}/m4a
   dir=${basedir}/mono
   stereodir=${basedir}/stereo
   outdir=${basedir}
   mkdir -p "${stereodir}"
+
+  for file in ${m4adir}/*.m4a
+  do
+    filepathbase=${file##*/}
+    filenamebase="${filepathbase%.*}"
+    wavname="${dir}/${filenamebase}.wav"
+    ffmpeg -i "${file}" "${wavname}"
+  done
+
   for file in ${dir}/*.wav
   do
     filename=${file##*/}
