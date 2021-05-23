@@ -376,7 +376,6 @@ episode-14:
     cadr.wav \
     ../common/theme-high.wav \
     douglass.wav \
-    ../common/theme-high.wav \
     buxton.wav \
     ../common/theme-high.wav \
     e14-closing-a.wav \
