@@ -15,5 +15,6 @@ do
     equalizer 6.3k 5.0q -20 \
     equalizer 8k 5.0q -20 \
     equalizer 10k 5.0q -20 \
+    equalizer 12k 5.0q -20 \
     highpass 130 4q
 done

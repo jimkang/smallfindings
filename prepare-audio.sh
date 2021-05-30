@@ -24,6 +24,17 @@
     sox -M "${file}" "${file}" "${stereofile}"
     #echo "Converting to stereo and adding reverb: ${stereofile}."
     #sox -M "${file}" "${file}" "${stereofile}" gain -1 reverb 0.5 50 100 100
-    echo "Converting to 44.1 kHz sample rate and normalizing"
-    sox "${stereofile}" --norm=-1 -r 44100 "${outfile}"
+    echo "Converting to 44.1 kHz sample rate, eqing, and normalizing"
+  # Remove crackle with eq, roll off plosives with highpass.
+    sox "${stereofile}" \
+      --norm=-1 \
+      -r 44100  \
+      --guard \
+      "${outfile}" \
+      equalizer 5k 1.0q -7 \
+      equalizer 6.3k 5.0q -20 \
+      equalizer 8k 5.0q -20 \
+      equalizer 10k 5.0q -20 \
+      equalizer 12k 5.0q -20 \
+      highpass 130 4q
   done

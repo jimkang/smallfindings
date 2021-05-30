@@ -387,3 +387,24 @@ episode-14:
     --tt "Small Findings Episode 14: Recumbent Findings" \
     --ta "Jim Kang" \
     --ty 2021
+
+episode-15:
+	./prepare-audio.sh src-audio/episode-15
+	cd src-audio/episode-15 && \
+	sox \
+    ../common/theme-high.wav \
+    e15-opening.wav \
+    ../common/theme-high.wav \
+    bike-locks.wav \
+    ../common/theme-high.wav \
+    laser-printer-drm.wav \
+    ../common/theme-high.wav \
+    sherlock-holmes.wav \
+    ../common/theme-high.wav \
+    e15-closing.wav \
+    ../common/theme-low.wav \
+    episode-15.wav
+	lame src-audio/episode-15/episode-15.wav episodes/smallfindings-15-light-criminology.mp3 \
+    --tt "Small Findings Episode 15: Light Criminology" \
+    --ta "Jim Kang" \
+    --ty 2021
