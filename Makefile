@@ -408,3 +408,24 @@ episode-15:
     --tt "Small Findings Episode 15: Light Criminology" \
     --ta "Jim Kang" \
     --ty 2021
+
+episode-16:
+	./prepare-audio.sh src-audio/episode-16
+	cd src-audio/episode-16 && \
+	sox \
+    ../common/theme-high.wav \
+    e16-opening.wav \
+    ../common/theme-high.wav \
+    decibels.wav \
+    ../common/theme-high.wav \
+    arneson-and-gygax.wav \
+    ../common/theme-high.wav \
+    non-leopard-wily.wav \
+    ../common/theme-high.wav \
+    e16-closing.wav \
+    ../common/theme-low.wav \
+    episode-16.wav
+	lame src-audio/episode-16/episode-16.wav episodes/smallfindings-16-incorrect-attributions.mp3 \
+    --tt "Small Findings Episode 16: Incorrect Attributions" \
+    --ta "Jim Kang" \
+    --ty 2021
