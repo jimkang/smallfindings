@@ -4,4 +4,4 @@ node_modules
 config.mk
 config.js
 _site
-src-audio
+src-audio/episode-*
