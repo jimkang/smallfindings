@@ -5,6 +5,7 @@ m4adir=${basedir}/m4a
 dir=${basedir}/mono
 stereodir=${basedir}/stereo
 outdir=${basedir}
+mkdir -p "${dir}"
 mkdir -p "${stereodir}"
 
 for file in ${m4adir}/*.m4a
@@ -14,6 +15,7 @@ do
   wavname="${dir}/${filenamebase}.wav"
   ffmpeg -i "${file}" "${wavname}"
 done
+#exit 0
 
 for file in ${dir}/*.wav
 do
@@ -31,10 +33,10 @@ do
     -r 44100  \
     --guard \
     "${outfile}" \
-    equalizer 5k 1.0q -7 \
-    equalizer 6.3k 5.0q -20 \
-    equalizer 8k 5.0q -20 \
-    equalizer 10k 5.0q -20 \
-    equalizer 12k 5.0q -20 \
     highpass 130 4q
+    #equalizer 5k 1.0q -7 \
+    #equalizer 6.3k 5.0q -20 \
+    #equalizer 8k 5.0q -20 \
+    #equalizer 10k 5.0q -20 \
+    #equalizer 12k 5.0q -20 \
 done

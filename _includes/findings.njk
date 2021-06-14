@@ -7,7 +7,11 @@
         {% if finding.links %}
           <ul class="finding-links">
           {% for link in finding.links %}
-             <li><a href="{{link.url}}">{{ link.name }}</a></li>
+            {% if link.url %}
+              <li><a href="{{link.url}}">{{ link.name }}</a></li>
+            {% else %}
+              <li>{{ link.name }}</li>
+            {% endif %}
           {% endfor %}
           </ul>
         {% endif %}

@@ -429,3 +429,24 @@ episode-16:
     --tt "Small Findings Episode 16: Incorrect Attributions" \
     --ta "Jim Kang" \
     --ty 2021
+
+episode-17:
+	./prepare-audio.sh src-audio/episode-17
+	cd src-audio/episode-17 && \
+	sox \
+    ../common/theme-high.wav \
+    e17-opening.wav \
+    ../common/theme-high.wav \
+    recording-computer-programs-that-are-bad-musicians.wav \
+    ../common/theme-high.wav \
+    sandwich-spread.wav \
+    ../common/theme-high.wav \
+    band-messages-and-politicians.wav \
+    ../common/theme-high.wav \
+    e17-closing.wav \
+    ../common/theme-low.wav \
+    episode-17.wav
+	lame src-audio/episode-17/episode-17.wav episodes/smallfindings-17-sandwich-spread.mp3 \
+    --tt "Small Findings Episode 17: Sandwich Spread" \
+    --ta "Jim Kang" \
+    --ty 2021
