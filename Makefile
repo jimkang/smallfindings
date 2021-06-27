@@ -450,3 +450,48 @@ episode-17:
     --tt "Small Findings Episode 17: Sandwich Spread" \
     --ta "Jim Kang" \
     --ty 2021
+
+episode-18:
+	#./prepare-audio.sh src-audio/episode-18
+	cd src-audio/episode-18 && \
+	sox \
+    ../common/theme-high.wav \
+    e18-opening.wav \
+    ../common/theme-high.wav \
+    westminster-quarters-with-clips.wav \
+    ../common/theme-high.wav \
+    delay-1.wav \
+    examples/aligned.wav \
+    delay-2.wav \
+    examples/offby010seconds.wav \
+    delay-3.wav \
+    examples/offby003seconds.wav \
+    delay-4.wav \
+    examples/aligned.wav \
+    delay-5.wav \
+    examples/offby001seconds.wav \
+    delay-6.wav \
+    examples/aligned.wav \
+    delay-7.wav \
+    examples/offby001seconds.wav \
+    delay-8.wav \
+    examples/vib-aligned.wav \
+    delay-9.wav \
+    examples/vib-offby010seconds.wav \
+    delay-10.wav \
+    examples/vib-offby010seconds.wav \
+    delay-11.wav \
+    examples/vib-aligned.wav \
+    delay-12.wav \
+    examples/vib-offby003seconds.wav \
+    delay-13.wav \
+    examples/vib-aligned.wav \
+    delay-14.wav \
+    ../common/theme-high-with-delay.wav \
+    e18-closing.wav \
+    ../common/theme-low.wav \
+    episode-18.wav
+	lame src-audio/episode-18/episode-18.wav episodes/smallfindings-18-bells-and-delay.mp3 \
+    --tt "Small Findings Episode 18: Bells and Delay" \
+    --ta "Jim Kang" \
+    --ty 2021

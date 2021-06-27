@@ -8,13 +8,13 @@ outdir=${basedir}
 mkdir -p "${dir}"
 mkdir -p "${stereodir}"
 
-for file in ${m4adir}/*.m4a
-do
-  filepathbase=${file##*/}
-  filenamebase="${filepathbase%.*}"
-  wavname="${dir}/${filenamebase}.wav"
-  ffmpeg -i "${file}" "${wavname}"
-done
+#for file in ${m4adir}/*.m4a
+#do
+#  filepathbase=${file##*/}
+#  filenamebase="${filepathbase%.*}"
+#  wavname="${dir}/${filenamebase}.wav"
+#  ffmpeg -i "${file}" "${wavname}"
+#done
 #exit 0
 
 for file in ${dir}/*.wav
