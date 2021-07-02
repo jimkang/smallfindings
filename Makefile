@@ -19,6 +19,12 @@ pushall: sync
 sync:
 	s3cmd sync --acl-public smallfindings/ s3://$(BUCKET)/$(APPDIR)/
 
+back-up:
+	rsync -a $(HOMEDIR)/ $(USER)@$(SERVER):$(BACKUPROOT)/$(APPDIR) \
+		--exclude .git \
+    --omit-dir-times \
+    --no-perms
+
 episode-2:
 	./prepare-audio.sh src-audio/episode-2
 	cd src-audio/episode-2 && \
