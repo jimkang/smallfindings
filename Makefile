@@ -501,3 +501,32 @@ episode-18:
     --tt "Small Findings Episode 18: Bells and Delay" \
     --ta "Jim Kang" \
     --ty 2021
+
+episode-19:
+	./prepare-audio.sh src-audio/episode-19
+	cd src-audio/episode-19 && \
+	sox \
+    ../common/theme-high.wav \
+    e19-opening.wav \
+    ../common/theme-high.wav \
+    catbird-1.wav \
+    Catbird.wav \
+    catbird-2.wav \
+    ../common/theme-high.wav \
+    bandcamp.wav \
+    ../common/time-passing-unresolved.wav \
+    bandcamp-update-a.wav \
+    ../common/time-passing-resolved.wav \
+    bandcamp-update.wav \
+    ../common/theme-high.wav \
+    grasshoppers.wav \
+    ../common/theme-high.wav \
+    bitcoin.wav \
+    ../common/theme-high.wav \
+    e19-closing.wav \
+    ../common/theme-low.wav \
+    episode-19.wav
+	lame src-audio/episode-19/episode-19.wav episodes/smallfindings-19-weird-animal-sounds.mp3 \
+    --tt "Small Findings Episode 19: Weird Animal Sounds" \
+    --ta "Jim Kang" \
+    --ty 2021
