@@ -530,3 +530,26 @@ episode-19:
     --tt "Small Findings Episode 19: Weird Animal Sounds" \
     --ta "Jim Kang" \
     --ty 2021
+
+episode-20:
+	./prepare-audio.sh src-audio/episode-20
+	cd src-audio/episode-20 && \
+	sox \
+    ../common/theme-high.wav \
+    e20-opening.wav \
+    ../common/theme-high.wav \
+    watercity-2.wav \
+    ../common/theme-high.wav \
+    speakers.wav \
+    ../common/theme-high.wav \
+    poirot.wav \
+    ../common/theme-high.wav \
+    delay-taleb.wav \
+    ../common/theme-high.wav \
+    e20-closing.wav \
+    ../common/theme-low.wav \
+    episode-20.wav
+	lame src-audio/episode-20/episode-20.wav episodes/smallfindings-20-watercity.mp3 \
+    --tt "Small Findings Episode 20: Watercity" \
+    --ta "Jim Kang" \
+    --ty 2021
