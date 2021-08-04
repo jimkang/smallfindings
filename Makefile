@@ -553,3 +553,24 @@ episode-20:
     --tt "Small Findings Episode 20: Watercity" \
     --ta "Jim Kang" \
     --ty 2021
+
+episode-21:
+	./prepare-audio.sh src-audio/episode-21
+	cd src-audio/episode-21 && \
+	sox \
+    ../common/theme-high.wav \
+    e21-opening.wav \
+    ../common/theme-high.wav \
+    glaciers.wav \
+    ../common/theme-high.wav \
+    schoolchildren.wav \
+    ../common/theme-high.wav \
+    taleb-retraction.wav \
+    ../common/theme-high.wav \
+    e21-closing.wav \
+    ../common/theme-low.wav \
+    episode-21.wav
+	lame src-audio/episode-21/episode-21.wav episodes/smallfindings-21-glaciers-are-long.mp3 \
+    --tt "Small Findings Episode 21: Glaciers Are Long" \
+    --ta "Jim Kang" \
+    --ty 2121
