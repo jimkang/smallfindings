@@ -573,4 +573,29 @@ episode-21:
 	lame src-audio/episode-21/episode-21.wav episodes/smallfindings-21-glaciers-are-long.mp3 \
     --tt "Small Findings Episode 21: Glaciers Are Long" \
     --ta "Jim Kang" \
-    --ty 2121
+    --ty 2021
+
+episode-22:
+	#./prepare-audio.sh src-audio/episode-22
+	cd src-audio/episode-22 && \
+	sox \
+    ../common/theme-high.wav \
+    e22-opening.wav \
+    ../common/theme-high.wav \
+    emu-war.wav \
+    ../common/theme-high.wav \
+    modulation-a.wav \
+    frampton.wav \
+    modulation-b.wav \
+    kraftwerk.wav \
+    modulation-c.wav \
+    ../common/theme-high.wav \
+    vomit.wav \
+    armies-of-hell-sample.wav \
+    e22-closing.wav \
+    ../common/theme-low.wav \
+    episode-22.wav
+	lame src-audio/episode-22/episode-22.wav episodes/smallfindings-22-emu-war.mp3 \
+    --tt "Small Findings Episode 22: Emu War" \
+    --ta "Jim Kang" \
+    --ty 2021
