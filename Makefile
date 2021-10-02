@@ -599,3 +599,22 @@ episode-22:
     --tt "Small Findings Episode 22: Emu War" \
     --ta "Jim Kang" \
     --ty 2021
+
+episode-23:
+	./prepare-audio.sh src-audio/episode-23
+	cd src-audio/episode-23 && \
+	sox \
+    ../common/theme-high.wav \
+    e23-opening.wav \
+    ../common/theme-high.wav \
+    what-did-jobs-say.wav \
+    ../common/theme-high.wav \
+    NanoStudio.wav \
+    ../common/theme-high.wav \
+    e23-closing.wav \
+    ../common/theme-low.wav \
+    episode-23.wav
+	lame src-audio/episode-23/episode-23.wav episodes/smallfindings-23-apple.mp3 \
+    --tt "Small Findings Episode 23: Apple" \
+    --ta "Jim Kang" \
+    --ty 2021
