@@ -618,3 +618,28 @@ episode-23:
     --tt "Small Findings Episode 23: Apple" \
     --ta "Jim Kang" \
     --ty 2021
+
+episode-24:
+	#./prepare-audio.sh src-audio/episode-24
+	cd src-audio/episode-24 && \
+	sox \
+    ../common/theme-high.wav \
+    e24-opening.wav \
+    ../common/theme-high.wav \
+    charging-bull.wav \
+    ../common/theme-high.wav \
+    hellbent-a.wav \
+    rawhide.wav \
+    hellbent-b.wav \
+    hell-bent-for-leather-1.wav \
+    hellbent-c.wav \
+    hell-bent-for-leather-2.wav \
+    repeat-v-timbre.wav \
+    ../common/theme-high.wav \
+    e24-closing.wav \
+    ../common/theme-low.wav \
+    episode-24.wav
+	lame src-audio/episode-24/episode-24.wav episodes/smallfindings-24-hell-bent-for-findings.mp3 \
+    --tt "Small Findings Episode 24: Hell Bent for Findings" \
+    --ta "Jim Kang" \
+    --ty 2021
