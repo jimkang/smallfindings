@@ -2,6 +2,7 @@
   "name": "smallfindings",
   "version": "1.0.0",
   "description": "The source for the Small Findings podcast.",
+  "type": "module",
   "private": true,
   "main": "index.html",
   "scripts": {},
@@ -25,6 +26,9 @@
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-rss": "^1.1.1",
+    "@sindresorhus/slugify": "^2.1.0",
+    "lodash.compact": "^3.0.1",
+    "no-throw-json-parse": "^1.0.0",
     "yamljs": "^0.3.0"
   }
 }

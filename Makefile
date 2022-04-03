@@ -25,6 +25,12 @@ back-up:
     --omit-dir-times \
     --no-perms
 
+copy-raw-site:
+	rsync -avz $(AUDIOSRCUSER)@$(AUDIOSRCSERVER):$(AUDIOSRCDIR) .
+
+episodes-from-raw:
+	node tools/make-new-episodes-from-raw.js sf-raw
+
 episode-2:
 	./prepare-audio.sh src-audio/episode-2
 	cd src-audio/episode-2 && \
