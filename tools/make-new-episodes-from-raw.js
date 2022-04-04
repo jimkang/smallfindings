@@ -15,7 +15,7 @@ var exec = promisify(childProcess.exec);
 
 const rawSitePath = 'sf-raw';
 var entryJSONRegex = /sf-raw-\w{8}\.json/;
-var epNumberRegex = /smallfindings-(\d+)-[\w-]+\.mp3/g;
+var epNumberRegex = /smallfindings-(\d+)-[\w-]+\.mp3/;
 
 /* global process */
 
@@ -115,8 +115,6 @@ async function assembleAudio({ mediaFilename, slug, episodeNumber, title }) {
     return;
   }
 
- 
-  // TODO: Get year and title. 
   await execCmd(`lame "${episodeWavPath}" "${mp3Filepath}" \
     --tt "Small Findings Episode ${episodeNumber}: ${title}" \
     --ta "Jim Kang" \
@@ -145,6 +143,7 @@ async function getLatestEpisodeNumber() {
 
 function getEpisodeNumberFromFilename(file) {
   var results = epNumberRegex.exec(file);
+  debugger;
   if (results && results.length > 1) {
     return +results[1];
   }
