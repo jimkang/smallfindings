@@ -28,6 +28,7 @@
     "@11ty/eleventy-plugin-rss": "^1.1.1",
     "@sindresorhus/slugify": "^2.1.0",
     "lodash.compact": "^3.0.1",
+    "lodash.curry": "^4.1.1",
     "no-throw-json-parse": "^1.0.0",
     "yamljs": "^0.3.0"
   }
