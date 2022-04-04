@@ -42,7 +42,9 @@ async function go() {
     // Unless you change assembleAudio to use unique tmp dirs, these have to
     // go one at a time.
     for (let i = 0; i < entriesWithoutEpisodes.length; ++i) {
-      await produceEpisode(latestEpisodeNumber, entriesWithoutEpisodes[i]);
+      let entry = entriesWithoutEpisodes[i];
+      entry.episodeNumber = latestEpisodeNumber + i;
+      await produceEpisode(entry);
     }
   } catch (error) {
     conclude(error);
@@ -80,7 +82,7 @@ async function getEntryIfNoEpisode( entryFile) {
   }
 }
 
-async function produceEpisode(latestEpisodeNumber, entry) {
+async function produceEpisode(entry) {
   await assembleAudio(entry);
 }
 
@@ -138,12 +140,11 @@ async function getLatestEpisodeNumber() {
   return (await readdir('episodes'))
     .filter(file => file.endsWith('.mp3'))
     .map(getEpisodeNumberFromFilename)
-    .reduce((latest, n) => n > latest ? latest : n, 0);
+    .reduce((latest, n) => n > latest ? n : latest, 0);
 }
 
 function getEpisodeNumberFromFilename(file) {
   var results = epNumberRegex.exec(file);
-  debugger;
   if (results && results.length > 1) {
     return +results[1];
   }
