@@ -64,7 +64,8 @@ async function getEntryIfNoEpisode( entryFile) {
   if (!entry) {
     return;
   }
-  const slug = slugify(entry.caption.split('|').shift());
+  const title = entry.caption.split('|').shift();
+  const slug = slugify(title);
   const episodePath = path.join('episodes', slug + '.njk');
   // Does the episode exist?
   try {
@@ -72,6 +73,7 @@ async function getEntryIfNoEpisode( entryFile) {
     return;
   } catch (error) {
     console.error('File does not exist (which is fine):', episodePath);
+    entry.title = title;
     entry.slug = slug;
     entry.episodePath = episodePath;
     return entry;
@@ -83,7 +85,7 @@ async function produceEpisode(latestEpisodeNumber, entry) {
 }
 
 // #throws
-async function assembleAudio({ mediaFilename, slug, episodeNumber }) {
+async function assembleAudio({ mediaFilename, slug, episodeNumber, title }) {
   await prepareDirs();
 
   const { base, ext } = path.parse(mediaFilename);
@@ -116,9 +118,9 @@ async function assembleAudio({ mediaFilename, slug, episodeNumber }) {
  
   // TODO: Get year and title. 
   await execCmd(`lame "${episodeWavPath}" "${mp3Filepath}" \
-    --tt "Small Findings Episode Whatever" \
+    --tt "Small Findings Episode ${episodeNumber}: ${title}" \
     --ta "Jim Kang" \
-    --ty 2022`);
+    --ty ${(new Date()).getFullYear()}`);
    
   return mp3Filepath;
 }
