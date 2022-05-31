@@ -4,12 +4,12 @@ HOMEDIR = $(shell pwd)
 
 build:
 	npx @11ty/eleventy \
-    --config=eleventy-config.js \
+    --config=eleventy-config.cjs \
     --output=smallfindings
 
 serve:
 	npx @11ty/eleventy \
-    --config=eleventy-config.js \
+    --config=eleventy-config.cjs \
     --output=smallfindings \
     --serve
 
