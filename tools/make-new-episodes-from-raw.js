@@ -2,7 +2,7 @@
 
 // WARNING: This expects to be run from the project root directory.
 
-import { readdir, readFile, access, copyFile, rmdir, mkdir } from 'fs/promises';
+import { readdir, readFile, access, copyFile, rmdir, mkdir, writeFile } from 'fs/promises';
 import { constants } from 'fs';
 import path from 'path';
 import noThrowJSONParse from 'no-throw-json-parse';
@@ -59,7 +59,7 @@ async function prepareDirs() {
   await mkdir('tmp/stereo', { recursive: true });
 }
   
-async function getEntryIfNoEpisode( entryFile) {
+async function getEntryIfNoEpisode(entryFile) {
   var entry = noThrowJSONParse(
     await readFile(path.join(rawSitePath, 'meta', entryFile), { encoding: 'utf8' })
   );
@@ -84,6 +84,7 @@ async function getEntryIfNoEpisode( entryFile) {
 
 async function produceEpisode(entry) {
   await assembleAudio(entry);
+  await assembleTemplate(entry);
 }
 
 // #throws
@@ -136,6 +137,27 @@ async function execCmd(cmd) {
   }
 }
 
+function assembleTemplate({ slug, episodeNumber, title, date }) {
+  const njkContent = `---
+layout: episode.njk
+stuff:
+  title: >
+    Episode ${episodeNumber}: ${title}
+  slug: ${slug}
+  season: 1
+  number: ${episodeNumber}
+  date: ${date}
+  imageFilename: small-findings.jpg
+  seconds: 1459
+  findings:
+    - 
+      text: ${title}
+`; 
+  
+  // TODO: Get actual episode length.
+  return writeFile(path.join('episodes', slug + '.njk'), njkContent, { encoding: 'utf8' });
+}
+  
 async function getLatestEpisodeNumber() {
   return (await readdir('episodes'))
     .filter(file => file.endsWith('.mp3'))
