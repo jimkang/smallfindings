@@ -19,6 +19,10 @@ pushall: sync
 sync:
 	s3cmd sync --acl-public smallfindings/ s3://$(BUCKET)/$(APPDIR)/
 
+sync-to-build-server: back-up
+	ssh $(USER)@$(SERVER) "cd $(BACKUPROOT)/$(APPDIR) && \
+    npm install"
+
 back-up:
 	rsync -a $(HOMEDIR)/ $(USER)@$(SERVER):$(BACKUPROOT)/$(APPDIR) \
 		--exclude .git \
@@ -28,8 +32,13 @@ back-up:
 copy-raw-site:
 	rsync -avz $(AUDIOSRCUSER)@$(AUDIOSRCSERVER):$(AUDIOSRCDIR) .
 
+copy-raw-site-to-pi:
+	./copy-raw-site-to-pi.sh
+
 episodes-from-raw:
 	node tools/make-new-episodes-from-raw.js sf-raw
+
+update-from-raw-and-build: copy-raw-site-to-pi episodes-from-raw build sync
 
 episode-2:
 	./prepare-audio.sh src-audio/episode-2
