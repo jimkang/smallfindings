@@ -4,12 +4,12 @@ HOMEDIR = $(shell pwd)
 
 build:
 	npx @11ty/eleventy \
-    --config=eleventy-config.js \
+    --config=eleventy-config.cjs \
     --output=smallfindings
 
 serve:
 	npx @11ty/eleventy \
-    --config=eleventy-config.js \
+    --config=eleventy-config.cjs \
     --output=smallfindings \
     --serve
 
@@ -19,11 +19,31 @@ pushall: sync
 sync:
 	s3cmd sync --acl-public smallfindings/ s3://$(BUCKET)/$(APPDIR)/
 
+sync-to-build-server: back-up
+	ssh $(USER)@$(SERVER) "cd $(BACKUPROOT)/$(APPDIR) && \
+    npm install"
+
 back-up:
 	rsync -a $(HOMEDIR)/ $(USER)@$(SERVER):$(BACKUPROOT)/$(APPDIR) \
 		--exclude .git \
     --omit-dir-times \
     --no-perms
+
+copy-raw-site:
+	rsync -avz $(AUDIOSRCUSER)@$(AUDIOSRCSERVER):$(AUDIOSRCDIR) .
+
+copy-raw-site-to-pi:
+	./copy-raw-site-to-pi.sh
+
+episodes-from-raw:
+	node tools/make-new-episodes-from-raw.js sf-raw
+
+update-from-raw-and-build: copy-raw-site-to-pi episodes-from-raw build sync
+
+install-audio-tools:
+	sudo apt-get install sox
+	sudo apt install -y ffmpeg
+	sudo apt-get install lame
 
 episode-2:
 	./prepare-audio.sh src-audio/episode-2

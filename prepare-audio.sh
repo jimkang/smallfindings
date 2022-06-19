@@ -7,6 +7,7 @@ stereodir=${basedir}/stereo
 outdir=${basedir}
 mkdir -p "${dir}"
 mkdir -p "${stereodir}"
+echo "basedir: ${basedir}"
 
 for file in ${m4adir}/*.m4a
 do

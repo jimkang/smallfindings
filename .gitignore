@@ -5,3 +5,5 @@ config.mk
 config.js
 _site
 src-audio/episode-*
+sf-raw/*
+tmp/*
