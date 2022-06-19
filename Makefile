@@ -40,6 +40,11 @@ episodes-from-raw:
 
 update-from-raw-and-build: copy-raw-site-to-pi episodes-from-raw build sync
 
+install-audio-tools:
+	sudo apt-get install sox
+	sudo apt install -y ffmpeg
+	sudo apt-get install lame
+
 episode-2:
 	./prepare-audio.sh src-audio/episode-2
 	cd src-audio/episode-2 && \
