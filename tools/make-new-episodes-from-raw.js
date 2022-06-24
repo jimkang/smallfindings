@@ -43,7 +43,7 @@ async function go() {
     // go one at a time.
     for (let i = 0; i < entriesWithoutEpisodes.length; ++i) {
       let entry = entriesWithoutEpisodes[i];
-      entry.episodeNumber = latestEpisodeNumber + i;
+      entry.episodeNumber = latestEpisodeNumber + i + 1;
       await produceEpisode(entry);
     }
   } catch (error) {
