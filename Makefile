@@ -3,7 +3,7 @@ include config.mk
 HOMEDIR = $(shell pwd)
 
 build:
-	npx @11ty/eleventy \
+	./node_modules/.bin/eleventy \
     --config=eleventy-config.cjs \
     --output=smallfindings
 
