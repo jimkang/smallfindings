@@ -138,11 +138,12 @@ async function execCmd(cmd) {
 }
 
 function assembleTemplate({ slug, episodeNumber, title, date }) {
+  const cleanedTitle = title.replace(/:/g, ' —');
   const njkContent = `---
 layout: episode.njk
 stuff:
   title: >
-    Episode ${episodeNumber}: ${title}
+    Episode ${episodeNumber}: ${cleanedTitle}
   slug: ${slug}
   season: 1
   number: ${episodeNumber}
@@ -151,7 +152,7 @@ stuff:
   seconds: 1459
   findings:
     - 
-      text: ${title}
+      text: ${cleanedTitle}
 `; 
   
   // TODO: Get actual episode length.
