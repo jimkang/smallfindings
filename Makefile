@@ -1,6 +1,7 @@
 include config.mk
 
 HOMEDIR = $(shell pwd)
+S3CMD = /usr/local/bin/s3cmd
 
 build:
 	./node_modules/.bin/eleventy \
@@ -17,7 +18,7 @@ pushall: sync
 	git push origin master
 
 sync:
-	s3cmd sync --acl-public smallfindings/ s3://$(BUCKET)/$(APPDIR)/
+	$(S3CMD) sync --acl-public smallfindings/ s3://$(BUCKET)/$(APPDIR)/
 
 sync-to-build-server: back-up
 	ssh $(USER)@$(SERVER) "cd $(BACKUPROOT)/$(APPDIR) && \
