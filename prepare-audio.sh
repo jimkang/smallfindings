@@ -2,6 +2,7 @@
 
 basedir=$1
 m4adir=${basedir}/m4a
+mp3dir=${basedir}/mp3
 dir=${basedir}/mono
 stereodir=${basedir}/stereo
 outdir=${basedir}
@@ -16,7 +17,16 @@ do
   wavname="${dir}/${filenamebase}.wav"
   ffmpeg -i "${file}" "${wavname}"
 done
-#exit 0
+
+# Big assumption that mp3s are already in stereo.
+for file in ${mp3dir}/*.mp3
+do
+  filepathbase=${file##*/}
+  filenamebase="${filepathbase%.*}"
+  wavname="${filenamebase}.wav"
+  stereofile="${stereodir}/${wavname}"
+  ffmpeg -i "${file}" "${stereofile}"
+done
 
 for file in ${dir}/*.wav
 do

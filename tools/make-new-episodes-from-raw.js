@@ -55,6 +55,7 @@ async function go() {
 async function prepareDirs() {
   await rmdir('tmp', { recursive: true });
   await mkdir('tmp/m4a', { recursive: true });
+  await mkdir('tmp/mp3', { recursive: true });
   await mkdir('tmp/mono', { recursive: true });
   await mkdir('tmp/stereo', { recursive: true });
 }
@@ -99,8 +100,7 @@ async function assembleAudio({ mediaFilename, slug, episodeNumber, title }) {
   if (ext === '.m4a') {
     await copyFile(path.join(rawSitePath, 'media', mediaFilename), `tmp/m4a/${resultBasename}.m4a`);
   } else if (ext === '.mp3') {
-    // We're guessing here.
-    await copyFile(path.join(rawSitePath, 'media', mediaFilename), `tmp/mono/${resultBasename}.mp3`);
+    await copyFile(path.join(rawSitePath, 'media', mediaFilename), `tmp/mp3/${resultBasename}.mp3`);
   } else {
     throw new Error(`Don't know what to do with this file extension: ${base}`);
   }

@@ -24,6 +24,12 @@ sync-to-build-server: back-up
 	ssh $(USER)@$(SERVER) "cd $(BACKUPROOT)/$(APPDIR) && \
     npm install"
 
+get-from-build-server:
+	rsync -a $(USER)@$(SERVER):$(BACKUPROOT)/$(APPDIR) $(HOMEDIR)/ \
+		--exclude .git \
+    --omit-dir-times \
+    --no-perms
+
 back-up:
 	rsync -a $(HOMEDIR)/ $(USER)@$(SERVER):$(BACKUPROOT)/$(APPDIR) \
 		--exclude .git \
