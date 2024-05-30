@@ -89,8 +89,12 @@ async function produceEpisode(entry) {
 }
 
 // #throws
-async function assembleAudio({ mediaFilename, slug, episodeNumber, title }) {
+async function assembleAudio({ mediaFilename, mediaFiles, slug, episodeNumber, title }) {
   await prepareDirs();
+
+  if (mediaFiles && mediaFiles.length > 0) {
+    mediaFilename = mediaFiles[0].filename;
+  }
 
   const { base, ext } = path.parse(mediaFilename);
   const resultBasename = `smallfindings-${episodeNumber}-${slug}`;

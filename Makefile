@@ -670,3 +670,14 @@ episode-24:
     --tt "Small Findings Episode 24: Hell Bent for Findings" \
     --ta "Jim Kang" \
     --ty 2021
+
+episode-33:
+	cd src-audio/episode-33 && \
+	sox \
+    ../common/theme-high.wav \
+    ../common/theme-low.wav \
+    episode-33.wav
+	lame src-audio/episode-33/episode-33.wav episodes/smallfindings-33-hell-bent-for-findings.mp3 \
+    --tt "Small Findings Episode 33: Hell Bent for Findings" \
+    --ta "Jim Kang" \
+    --ty 2021
